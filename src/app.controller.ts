@@ -1,12 +1,32 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
 import { AppService } from './app.service';
+import { PaginationRequestDto } from './dto/paginationRequest.dto';
+import { ValidateBodyPipe } from './Pipes/validate-body.pipe';
+import { TransformResponseInterceptor } from './Interceptors/transform-response.interceptor';
+import { ConvertResponseToDtoInterceptor } from './Interceptors/convert-response-to-dto.interceptor';
+import { CommitResponseDto } from './dto/commitRespose.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller()
+@ApiTags('Github service')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('commits')
+  @ApiResponse({
+    status: 201,
+    type: CommitResponseDto,
+    description: 'List of commits from repository',
+  })
+  @ApiOperation({
+    summary: 'Get repository commits',
+    description: 'This endpoint is used to retrieve repository commits.',
+  })
+  @UseInterceptors(new ConvertResponseToDtoInterceptor(CommitResponseDto))
+  @UseInterceptors(TransformResponseInterceptor)
+  getCommits(
+    @Query(new ValidateBodyPipe()) itemsPerPage: PaginationRequestDto,
+  ) {
+    return this.appService.getListCommits(itemsPerPage);
   }
 }
