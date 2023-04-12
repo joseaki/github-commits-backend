@@ -4,7 +4,7 @@ import { PaginationRequestDto } from './dto/paginationRequest.dto';
 import { ValidatePipe } from './Pipes/validate-body.pipe';
 import { TransformResponseInterceptor } from './Interceptors/transform-response.interceptor';
 import { ConvertResponseToDtoInterceptor } from './Interceptors/convert-response-to-dto.interceptor';
-import { CommitResponseDto } from './dto/commitRespose.dto';
+import { CommitResponseDto } from './dto/commitResponse.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller()
