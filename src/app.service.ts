@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { GithubService } from 'src/services/github.service';
-import { PaginationRequestDto } from './dto/paginationRequest.dto';
+import { PaginationRequestDto } from 'src/dto/paginationRequest.dto';
 
 @Injectable()
 export class AppService {

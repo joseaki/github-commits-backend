@@ -1,10 +1,10 @@
 import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
 import { AppService } from './app.service';
-import { PaginationRequestDto } from './dto/paginationRequest.dto';
-import { ValidatePipe } from './Pipes/validate-body.pipe';
+import { PaginationRequestDto } from 'src/dto/paginationRequest.dto';
+import { ValidatePipe } from 'src/Pipes/validate-body.pipe';
 import { TransformResponseInterceptor } from './Interceptors/transform-response.interceptor';
 import { ConvertResponseToDtoInterceptor } from './Interceptors/convert-response-to-dto.interceptor';
-import { CommitResponseDto } from './dto/commitResponse.dto';
+import { CommitResponseDto } from 'src/dto/commitResponse.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller()
