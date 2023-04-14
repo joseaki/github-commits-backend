@@ -6,7 +6,7 @@ $ npm install
 
 ## Create a github fine-grained personal access token
 
-Ro create a token follow this guide: [Guide to create fine-grained personal access token ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token)
+To create a token follow this guide: [Guide to create fine-grained personal access token ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token)
 
 ## Create a environment file
 

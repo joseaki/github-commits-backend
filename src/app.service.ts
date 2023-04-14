@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { GithubService } from 'src/services/github.service';
 import { CommitRequestDto } from './dto/commitRequest.dto';
 

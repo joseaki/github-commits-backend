@@ -25,7 +25,6 @@ export class GithubService {
 
       const user = items[3];
       const repoName = items[4];
-
       const request$ = this.httpService.get<CommitData[]>(
         `/repos/${user}/${repoName}/commits`,
         {
@@ -45,7 +44,6 @@ export class GithubService {
       if (error instanceof HttpException) {
         throw error;
       }
-
       throw new NotFoundException('Repository does not exist');
     }
   }
