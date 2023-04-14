@@ -5,7 +5,7 @@ export interface CommitData {
   url: string;
   html_url: string;
   comments_url: string;
-  author: CommitDataAuthor;
+  author?: CommitDataAuthor;
   committer: CommitDataAuthor;
   parents: Parent[];
 }

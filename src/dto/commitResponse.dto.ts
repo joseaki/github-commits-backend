@@ -13,4 +13,12 @@ export class CommitResponseDto {
   @ApiProperty({ example: '2021-07-29T12:52:37Z', description: 'commit date' })
   @Expose()
   date: Date;
+
+  @ApiProperty({ example: '08db77c', description: 'commit sha' })
+  @Expose()
+  commit: string;
+
+  @ApiProperty({ example: 'joseaki', description: 'github username' })
+  @Expose()
+  user: string;
 }
