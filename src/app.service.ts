@@ -7,15 +7,16 @@ export class AppService {
   constructor(private readonly githubService: GithubService) {}
 
   async getListCommits(params: CommitRequestDto) {
+    const { itemsPerPage = 10, page = 1 } = params;
     const commits = await this.githubService.getCommits(
-      params.itemsPerPage,
-      params.page,
+      itemsPerPage,
+      page,
       params.repo,
     );
     return {
-      page: params.page,
-      nextPage: params.page + 1,
-      itemsPerPage: params.itemsPerPage,
+      page: page,
+      nextPage: page + 1,
+      itemsPerPage: itemsPerPage,
       totalItems: commits.length,
       items: commits.map((commit) => {
         return {

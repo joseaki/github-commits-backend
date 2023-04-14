@@ -1,11 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Expose } from 'class-transformer';
 import { IsNumber, IsPositive, IsOptional } from 'class-validator';
 
 export class PaginationRequestDto {
   @IsNumber()
   @IsPositive()
-  @Expose()
   @IsOptional()
   @ApiProperty({
     example: 2,
@@ -17,7 +15,6 @@ export class PaginationRequestDto {
 
   @IsNumber()
   @IsPositive()
-  @Expose()
   @IsOptional()
   @ApiProperty({
     example: 1,

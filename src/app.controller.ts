@@ -30,7 +30,6 @@ export class AppController {
   )
   @UseInterceptors(TransformResponseInterceptor)
   getCommits(@Query(new ValidatePipe()) params: CommitRequestDto) {
-    console.log('HEERRER');
     return this.appService.getListCommits(params);
   }
 }
