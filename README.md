@@ -14,7 +14,7 @@ On the root of the project create a `.env` file and insert the following variabl
 
 ```bash
 GITHUB_TOKEN="<YOUR-FINE-GRAINED-PERSONAL-ACCESS-TOKEN-GOES-HERE>"
-DEFAULT_GITHUB_REPOSITORY="https://github.com/joseaki/semantic-segmentation-editor"
+DEFAULT_GITHUB_REPOSITORY="https://github.com/joseaki/github-commits-backend"
 ```
 
 ## Running the app
