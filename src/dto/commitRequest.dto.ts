@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, IsString, IsUrl } from 'class-validator';
 import { PaginationRequestDto } from './paginationRequest.dto';
+import { Expose } from 'class-transformer';
 
 export class CommitRequestDto extends PaginationRequestDto {
   @IsOptional()
@@ -14,5 +15,6 @@ export class CommitRequestDto extends PaginationRequestDto {
     description: 'Github url repository',
     required: false,
   })
+  @Expose()
   repo?: string;
 }

@@ -15,7 +15,7 @@ export class AppController {
 
   @Get('commits')
   @ApiResponse({
-    status: 201,
+    status: 200,
     type: CommitResponseDto,
     description: 'List of commits from repository',
   })
